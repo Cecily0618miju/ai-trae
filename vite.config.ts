@@ -5,8 +5,8 @@ import { traeBadgePlugin } from 'vite-plugin-trae-solo-badge';
 
 // https://vite.dev/config/
 export default defineConfig({
-  // 让构建产物可在任意子目录或解压后直接打开，适配社区 HTML ZIP 体验。
-  base: './',
+  // GitHub Pages 部署：https://cecily0618miju.github.io/ai-trae/
+  base: '/ai-trae/',
   build: {
     sourcemap: 'hidden',
   },
