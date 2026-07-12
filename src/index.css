@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-rice: #FAF7F2;
+    --color-surface: #F3EDE3;
+    --color-ink: #1D1B19;
+    --color-muted: #706A63;
+    --color-cinnabar: #D63B30;
+    --color-gold: #D6A73C;
+    --color-jade: #2F7D70;
+    --color-indigo-ai: #5B4B8A;
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --focus-ring: 0 0 0 3px rgba(214, 59, 48, 0.16);
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-rice);
+    color: var(--color-ink);
+    font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  button, a, input, textarea, select {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cinnabar);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* 主按钮 - 朱砂红 */
+  .btn-primary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-cinnabar px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition-colors hover:bg-cinnabar-dark hover:shadow-glow active:bg-cinnabar-dark disabled:cursor-not-allowed disabled:opacity-45;
+  }
+
+  /* 次按钮 - 鎏金描边 */
+  .btn-secondary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-ink/10 bg-white/70 px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-ink/20 hover:bg-white;
+  }
+
+  /* 幽灵按钮 */
+  .btn-ghost {
+    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-medium text-ink/65 transition-colors hover:bg-ink/5 hover:text-ink;
+  }
+
+  /* 卡片 */
+  .card {
+    @apply rounded-3xl border border-ink/[0.07] bg-white/75 p-5 shadow-soft backdrop-blur-sm md:p-6;
+  }
+
+  .card-hover {
+    @apply transition-[border-color,box-shadow,transform] hover:-translate-y-0.5 hover:border-ink/10 hover:shadow-card;
+  }
+
+  /* 章节容器 */
+  .section {
+    @apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8;
+  }
+
+  /* 标签 */
+  .tag {
+    @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+
+  .tag-cinnabar {
+    @apply tag bg-cinnabar/10 text-cinnabar;
+  }
+
+  .tag-gold {
+    @apply tag bg-gold/15 text-gold-dark;
+  }
+
+  .tag-jade {
+    @apply tag bg-jade/10 text-jade;
+  }
+
+  .tag-indigo {
+    @apply tag bg-indigo/10 text-indigo;
+  }
+
+  /* 印章样式 */
+  .seal {
+    @apply inline-flex items-center justify-center rounded-lg bg-cinnabar px-2 py-1 font-serif text-xs font-bold text-white;
+    box-shadow: 0 2px 6px -2px rgba(200, 57, 46, 0.4);
+  }
+
+  /* 数字大号展示 */
+  .num-display {
+    @apply font-mono font-bold tabular-nums;
+  }
+
+  .panel {
+    @apply rounded-3xl border border-ink/[0.07] bg-white/65 p-5 md:p-6;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] text-cinnabar;
+  }
+
+  .field-control {
+    @apply w-full rounded-2xl border border-ink/10 bg-white/75 px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-ink/35 focus:border-cinnabar/45 focus:bg-white;
+  }
+}
+
+@layer utilities {
+  /* 纹样背景纹理 */
+  .texture-paper {
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(201, 169, 97, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(200, 57, 46, 0.03) 0%, transparent 50%);
+  }
+
+  .texture-grid {
+    background-image:
+      linear-gradient(rgba(26, 26, 26, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26, 26, 26, 0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* 文字渐变 */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #C9A961 0%, #A88A42 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-cinnabar {
+    background: linear-gradient(135deg, #C8392E 0%, #9E2A21 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* 隐藏滚动条但保留滚动 */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 169, 97, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 169, 97, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

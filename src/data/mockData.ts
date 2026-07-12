@@ -1,0 +1,335 @@
+// 匠心出圈 - 内置 Mock 数据
+import type { CaseSummary, GeneratedPlan, ProjectInput } from "./types";
+
+// 默认糖画案例输入
+export const SUGAR_PAINTING_INPUT: ProjectInput = {
+  heritageName: "糖画",
+  craftFeatures:
+    "用熬化的糖浆在石板上快速作画，形成可以食用的龙、凤、蝴蝶等图案",
+  inheritorStory:
+    "一位老师傅坚持摆摊二十多年，希望让孩子们记住童年里的传统手艺",
+  targetAudience: ["年轻人", "亲子家庭"],
+  platforms: ["抖音", "小红书"],
+  duration: "30s",
+  goal: "科普传播",
+};
+
+// 糖画完整生成方案（默认示例）
+export const SUGAR_PAINTING_PLAN: GeneratedPlan = {
+  id: "case-sugar-painting",
+  input: SUGAR_PAINTING_INPUT,
+  topics: [
+    {
+      title: "一勺糖，怎么画出会发光的龙？",
+      platform: "抖音",
+      reason: "开头即高能，用'会发光'制造好奇，3秒内留住观众",
+      highlight: "糖浆拉丝特写 + 光影对比，强视觉冲击",
+    },
+    {
+      title: "00后第一次看糖画，居然舍不得吃",
+      platform: "小红书",
+      reason: "以年轻人视角切入，引发同龄人共鸣与转发",
+      highlight: "情绪反差 + 童年回忆杀，适合种草",
+    },
+    {
+      title: "这门手艺，藏着中国人的浪漫",
+      platform: "视频号",
+      reason: "文化升维，适合中老年群体与家庭传播",
+      highlight: "传承人故事 + 文化解读，情感共鸣强",
+    },
+  ],
+  script: [
+    {
+      timeRange: "0-3秒",
+      phase: "爆款开头",
+      visual: "特写：金黄糖浆从勺尖缓缓拉出龙形，逆光透亮",
+      narration: "你见过会发光的糖吗？",
+      subtitle: "会发光的糖",
+      shootingTip: "逆光/侧逆光拍摄，糖浆半透明效果最佳",
+    },
+    {
+      timeRange: "3-10秒",
+      phase: "技艺展示",
+      visual: "俯拍：老师傅手腕翻飞，糖浆在石板上流淌成图案",
+      narration: "一勺糖，三十秒，一条龙就活了",
+      subtitle: "一勺糖，一条龙",
+      shootingTip: "俯拍 + 略微加速，突出动作流畅感",
+    },
+    {
+      timeRange: "10-20秒",
+      phase: "故事转折",
+      visual: "中景：摊前小孩眼睛发亮，举起糖画转圈",
+      narration: "老师傅摆摊二十多年，就为了让孩子记住童年的甜",
+      subtitle: "二十年的甜",
+      shootingTip: "抓拍孩子真实反应，避免摆拍",
+    },
+    {
+      timeRange: "20-28秒",
+      phase: "情绪升华",
+      visual: "近景：老师傅笑着递糖，背景夕阳暖光",
+      narration: "这门手艺不缺故事，缺的是被看见",
+      subtitle: "缺的是被看见",
+      shootingTip: "夕阳逆光 + 慢动作，营造温暖氛围",
+    },
+    {
+      timeRange: "28-30秒",
+      phase: "互动引导",
+      visual: "全屏字幕 + 糖画龙特写",
+      narration: "你小时候吃过糖画吗？评论区告诉我",
+      subtitle: "你吃过吗？",
+      shootingTip: "字幕居中，留出评论引导箭头",
+    },
+  ],
+  shots: [
+    {
+      id: "镜01", shotType: "特写", description: "糖浆从勺尖拉出龙形轮廓，逆光透亮",
+      movement: "固定 + 微推", subtitle: "会发光的糖", focus: "糖浆拉丝的透光质感",
+      visualPrompt: "竖屏短视频画面，老街糖画摊，金黄色糖浆在石板上拉出龙形，逆光透亮，手部特写，温暖电影感，高细节",
+      composition: "俯拍近景，糖浆轨迹位于画面中心，手部从右上角进入",
+      duration: "3秒",
+    },
+    {
+      id: "镜02", shotType: "俯拍全景", description: "石板上糖画成形全过程，老师傅手腕动作",
+      movement: "俯拍固定", subtitle: "一勺糖，一条龙", focus: "动作流畅与图案成形",
+      visualPrompt: "俯拍，石板上糖画成形全过程，糖浆流淌轨迹清晰，老师傅手腕动作，自然光，暖色调",
+      composition: "正俯拍，石板占画面下方2/3，留白上方给天空",
+      duration: "5秒",
+    },
+    {
+      id: "镜03", shotType: "中景", description: "小孩在摊前抬头看糖画，眼睛发亮",
+      movement: "手持跟随", subtitle: "童年的甜", focus: "孩子真实表情反应",
+      visualPrompt: "中景，小孩在糖画摊前抬头仰望，眼睛发亮，自然光，生活感抓拍",
+      composition: "平视中景，小孩在画面左侧，摊位在右侧",
+      duration: "4秒",
+    },
+    {
+      id: "镜04", shotType: "近景", description: "老师傅微笑递出糖画，背景夕阳",
+      movement: "缓推", subtitle: "二十年的坚守", focus: "传承人神态与情感",
+      visualPrompt: "近景，老师傅微笑递出糖画，背景夕阳暖光，人像模式，情感温度",
+      composition: "中近景，人物居中，背景虚化",
+      duration: "5秒",
+    },
+    {
+      id: "镜05", shotType: "特写", description: "糖画龙在阳光下晃动，晶莹剔透",
+      movement: "微移", subtitle: "你吃过吗？", focus: "成品质感与互动引导",
+      visualPrompt: "特写，糖画龙在阳光下晃动，晶莹剔透，侧光，高质感",
+      composition: "微距特写，成品占满画面，光线从左上角进入",
+      duration: "3秒",
+    },
+  ],
+  covers: [
+    { type: "悬念型", title: "这不是画，是能吃的非遗" },
+    { type: "情绪型", title: "一勺糖，画出千年手艺" },
+    { type: "知识型", title: "小时候的糖画，原来这么讲究" },
+  ],
+  subtitles: [
+    "你见过会发光的糖吗？",
+    "一勺糖，三十秒，一条龙就活了",
+    "老师傅摆摊二十多年，只为让孩子记住童年的甜",
+    "这门手艺不缺故事，缺的是被看见",
+    "你小时候吃过糖画吗？",
+  ],
+  shootingList: {
+    props: ["铜糖锅", "石板", "糖画铲", "竹签", "熬化的麦芽糖", "小马扎"],
+    scenes: ["老师傅糖画摊位", "黄昏街道", "孩童围观人群"],
+    closeups: ["糖浆拉丝特写", "糖画成形指尖", "糖画透光纹理", "孩童眼睛特写"],
+    people: ["老师傅正面/侧面", "孩童仰望表情", "路人围观剪影"],
+    environment: ["摊位全景", "夕阳街道空镜", "树影斑驳地面"],
+    audio: ["现场熬糖咕嘟声", "糖浆接触石板的滋滋声", "孩童笑声", "环境街道白噪音"],
+    lighting: ["逆光拍摄糖浆透亮", "夕阳暖色调", "避免顶光硬阴影", "可用反光板补面部光"],
+  },
+  scores: {
+    opening: 92,
+    culture: 88,
+    youthResonance: 85,
+    executability: 90,
+    platformPotential: 87,
+    overall: 89,
+  },
+  scoreReasons: {
+    opening: "开头画面具备强视觉冲击（糖浆拉丝、逆光透亮），技艺特点描述清晰，AI 据此设计了高能首帧，3 秒钩子完整度且贴合年轻人审美",
+    culture: "命中「糖画」专属文化模板，识别出熬糖、石板作画、拉丝等核心技艺，文化表达准确，传承人故事增强了文化温度",
+    youthResonance: "选题切入年轻化视角（会发光的糖），目标受众匹配年轻人，开头钩子采用反差感与好奇心设计，但可进一步增加第一人称视角",
+    executability: "分镜表完整（含景别、运镜、构图、时长），拍摄清单覆盖道具/场景/特写/收音/光线，可直接交付拍摄团队执行",
+    platformPotential: "已生成2个平台专属版本（抖音、小红书），每个版本有独立开头策略与封面标题，平台适配度高",
+  },
+  suggestions: [
+    "开头3秒先展示糖浆逆光拉丝的最有冲击力画面，不要从摊位全景起",
+    "增加传承人一句有情绪的口播，例如'我就想让孩子们记住这个味'",
+    "结尾加入互动问题'你吃过糖画吗'，并保留3秒评论引导时间",
+  ],
+  platformVersions: [
+    {
+      platform: "抖音",
+      openingStrategy: "前3秒强视觉冲击，糖浆拉丝逆光特写，不放字幕",
+      subtitleStyle: "快节奏大字幕，一句一行，3-5字为一组",
+      coverTitle: "你见过会发光的糖吗？",
+      coverTitleB: "0.5秒看懂糖画的硬核操作",
+      openingHookA: "强视觉冲击：直接给糖浆拉丝逆光特写，慢动作，前3秒不放字幕",
+      openingHookB: "反问悬念：首帧抛出'你见过会发光的糖吗？'，1秒悬念后揭晓画面",
+      hookWinner: "A",
+      endingInteraction: "评论区互动提问 + 引导关注",
+      reason: "抖音算法依赖完播率和互动，前3秒决定视频命运；A 钩子更契合抖音'视觉优先'的留存逻辑",
+    },
+    {
+      platform: "小红书",
+      openingStrategy: "封面图+标题先行，'这不是画，是能吃的非遗'引发好奇",
+      subtitleStyle: "温暖治愈风格，加入种草话术和表情引导",
+      coverTitle: "一勺糖，画出千年手艺",
+      coverTitleB: "00后第一次看糖画，舍不得走",
+      openingHookA: "封面种草：封面图+标题先行，'这不是画，是能吃的非遗'引发好奇点击",
+      openingHookB: "第一人称：'我第一次看糖画'+真实反应镜头，带入感更强",
+      hookWinner: "B",
+      endingInteraction: "引导收藏 + 关注 + 评论区分享童年回忆",
+      reason: "小红书用户习惯图文+视频种草，标题和封面决定点击率；B 钩子的第一人称视角更契合种草氛围",
+    },
+  ],
+  cultureCheck: {
+    heritageIdentified: "「糖画」—— 糖画、糖人、吹糖类非遗项目",
+    keywords: ["熬糖", "石板作画", "拉丝", "冷却成型", "可食用"],
+    highlight: "这门手艺不缺故事，缺的是被看见",
+    risks: ["避免只当成普通甜品或猎奇内容", "避免只强调'能吃的画'而忽略手工技艺", "避免过度使用滤镜掩盖糖浆质感"],
+    suggestions: ["童年记忆", "手工温度", "现场互动", "老师傅坚守"],
+    score: 92,
+  },
+  createdAt: "2026-07-01 10:30",
+};
+
+// 案例摘要列表（示例案例页 + 作品库共用）
+export const CASE_LIST: CaseSummary[] = [
+  {
+    id: "case-sugar-painting",
+    heritageName: "糖画",
+    scene: "街头老手艺 · 童年回忆",
+    platforms: ["抖音", "小红书"],
+    duration: "30s",
+    status: "示例",
+    score: 89,
+  },
+  {
+    id: "case-shadow-puppet",
+    heritageName: "皮影戏",
+    scene: "光影非遗 · 民间叙事",
+    platforms: ["B站", "视频号"],
+    duration: "60s",
+    status: "示例",
+    score: 91,
+  },
+  {
+    id: "case-paper-cutting",
+    heritageName: "剪纸",
+    scene: "窗花民俗 · 节庆符号",
+    platforms: ["小红书", "抖音"],
+    duration: "30s",
+    status: "示例",
+    score: 86,
+  },
+  {
+    id: "case-su-embroidery",
+    heritageName: "苏绣",
+    scene: "指尖丝线 · 江南雅韵",
+    platforms: ["视频号", "小红书"],
+    duration: "60s",
+    status: "示例",
+    score: 90,
+  },
+];
+
+// 作品库初始数据（用户已生成方案）
+export const LIBRARY_INIT: CaseSummary[] = [
+  {
+    id: "lib-001",
+    heritageName: "糖画",
+    scene: "街头老手艺 · 童年回忆",
+    platforms: ["抖音", "小红书"],
+    duration: "30s",
+    status: "已生成",
+    score: 89,
+  },
+  {
+    id: "lib-002",
+    heritageName: "蓝印花布",
+    scene: "植物染织 · 江南布艺",
+    platforms: ["视频号"],
+    duration: "60s",
+    status: "已生成",
+    score: 84,
+  },
+  {
+    id: "lib-003",
+    heritageName: "泥塑",
+    scene: "民间彩塑 · 童趣造型",
+    platforms: ["抖音"],
+    duration: "15s",
+    status: "已生成",
+    score: 82,
+  },
+];
+
+// 首页适合人群
+export const TARGET_GROUPS = [
+  {
+    icon: "Hand",
+    title: "非遗传承人",
+    desc: "有手艺有故事，需要被看见的表达方式",
+  },
+  {
+    icon: "Hammer",
+    title: "传统手艺人",
+    desc: "想让作品走出作坊，触达年轻人",
+  },
+  {
+    icon: "MapPin",
+    title: "地方文旅账号",
+    desc: "打造地方文化 IP，提升传播力",
+  },
+  {
+    icon: "Video",
+    title: "文化类博主",
+    desc: "需要爆款选题与分镜，提升内容产能",
+  },
+  {
+    icon: "GraduationCap",
+    title: "学校社团",
+    desc: "校园非遗展示与文创项目策划",
+  },
+  {
+    icon: "Sparkles",
+    title: "文创团队",
+    desc: "为文创产品找到年轻化表达",
+  },
+];
+
+// 首页 AI 能力
+export const AI_CAPABILITIES = [
+  {
+    icon: "Flame",
+    title: "爆款选题",
+    desc: "AI 分析非遗亮点，生成 3 个传播力强的选题方向",
+  },
+  {
+    icon: "ScrollText",
+    title: "短视频脚本",
+    desc: "按时间轴生成开头/展示/转折/升华/互动完整结构",
+  },
+  {
+    icon: "Camera",
+    title: "镜头分镜",
+    desc: "景别、运镜、字幕、拍摄重点，可直接执行",
+  },
+  {
+    icon: "Type",
+    title: "封面文案",
+    desc: "悬念型/情绪型/知识型三种封面，匹配不同平台",
+  },
+  {
+    icon: "ListChecks",
+    title: "拍摄清单",
+    desc: "道具、场景、收音、光线全部备齐，开拍即用",
+  },
+  {
+    icon: "Gauge",
+    title: "传播评分",
+    desc: "6 维度雷达评分，预测传播潜力与可执行性",
+  },
+];
